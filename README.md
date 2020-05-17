@@ -46,3 +46,4 @@ java -jar websitemon.jar -cmdHelp
 
 ## donation
 websitemon is absolutely free. Nevertheless, I would appreciate a donation if you use and like the tool :)
+https://soumasoft.com/websitemon/#donation
