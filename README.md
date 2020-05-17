@@ -36,3 +36,10 @@ java -jar websitemon.jar -cmdSettPersist
 - now you can check your settings using following command:
 ````bash
 java -jar websitemon.jar -cmdMailtest
+````
+
+## advanced usage
+The main functions of websitemon have already been described. For information about further commands please use the help:
+````bash
+java -jar websitemon.jar -cmdHelp
+````
