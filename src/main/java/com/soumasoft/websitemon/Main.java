@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.soumasoft.websitemon.commands.CommandHandler;
-import com.soumasoft.websitemon.config.CommandDefinition;
 import com.soumasoft.websitemon.config.Config;
 import com.soumasoft.websitemon.config.ConfigManager;
 import com.soumasoft.websitemon.db.DbManager;
@@ -27,14 +26,17 @@ public class Main {
 			Config cfg = ConfigManager.prepareConfig(args);
 			
 			logger.info(String.format("command: %s", cfg.getMainCommand().getCliOpt()));
-						
-			if(!CommandDefinition.INSTALL.equals(cfg.getMainCommand())) {
+
+			// create handler instance and execute command
+			CommandHandler cmdHandler = ((CommandHandler)cfg.getMainCommand().getHandlerClazz().getDeclaredConstructor().newInstance());
+			
+			// init db if required
+			if(cmdHandler.requiresDb()) {
 				DbManager.checkPreparedAndThrow(cfg);
 				ConfigManager.initDbSettingMap(cfg);
 			}			
-			
-			// create handler instance and execute command
-			CommandHandler cmdHandler = ((CommandHandler)cfg.getMainCommand().getHandlerClazz().getDeclaredConstructor().newInstance());
+
+			// execute command
 			cmdHandler.execute(cfg);
 						
 		} catch (Exception e) {

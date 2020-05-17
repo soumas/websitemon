@@ -1,12 +1,10 @@
 package com.soumasoft.websitemon.commands.handler;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.commons.mail.EmailException;
-import org.apache.maven.model.Model;
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +24,14 @@ public class CmdVersion implements CommandHandler {
 	final static Logger logger = LoggerFactory.getLogger(CmdVersion.class);
 	
 	public void execute(Config cfg) throws EmailException, FileNotFoundException, IOException, XmlPullParserException {
-        MavenXpp3Reader reader = new MavenXpp3Reader();
-        Model model = reader.read(new FileReader("pom.xml"));
-        System.out.println(model.getVersion());
+		Properties properties = new Properties();
+		properties.load(this.getClass().getClassLoader().getResourceAsStream("project.properties"));
+		System.out.println(properties.getProperty("version"));
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return false;
+	}
+
 }

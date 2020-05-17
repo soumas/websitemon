@@ -100,5 +100,11 @@ public class CmdCheck implements CommandHandler {
 			logger.info("No notification is sent because settMailReceiver is undefined.");
 		}
 	}
+	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
 
 }

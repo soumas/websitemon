@@ -53,4 +53,9 @@ public class CmdAdd implements CommandHandler {
 
 	}
 
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
 }

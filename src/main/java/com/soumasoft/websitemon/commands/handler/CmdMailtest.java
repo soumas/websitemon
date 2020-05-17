@@ -29,4 +29,9 @@ public class CmdMailtest implements CommandHandler {
 		}
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+	
 }

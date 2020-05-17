@@ -39,4 +39,10 @@ public class CmdDelete implements CommandHandler {
 		}
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
+	
 }

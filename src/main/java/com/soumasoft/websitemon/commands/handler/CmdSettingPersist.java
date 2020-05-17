@@ -39,4 +39,10 @@ public class CmdSettingPersist implements CommandHandler {
 			});
 		}
 	}
+	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
 }

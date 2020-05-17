@@ -11,5 +11,6 @@ import com.soumasoft.websitemon.config.Config;
  *
  */
 public interface CommandHandler {
+	boolean requiresDb();
 	void execute(Config cfg) throws Exception;
 }

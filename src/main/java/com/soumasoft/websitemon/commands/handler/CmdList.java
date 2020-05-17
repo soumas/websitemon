@@ -29,4 +29,9 @@ public class CmdList implements CommandHandler {
 		}
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
 }

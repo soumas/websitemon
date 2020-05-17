@@ -30,4 +30,10 @@ public class CmdSettingList implements CommandHandler {
 
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return true;
+	}
+
+	
 }

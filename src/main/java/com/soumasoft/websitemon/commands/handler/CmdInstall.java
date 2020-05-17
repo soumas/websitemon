@@ -83,4 +83,10 @@ public class CmdInstall implements CommandHandler {
 
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return false;
+	}
+
+	
 }

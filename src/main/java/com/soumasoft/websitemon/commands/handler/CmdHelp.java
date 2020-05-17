@@ -23,4 +23,9 @@ public class CmdHelp implements CommandHandler {
 		ConfigManager.printHelp();
 	}
 	
+	@Override
+	public boolean requiresDb() {
+		return false;
+	}
+
 }
