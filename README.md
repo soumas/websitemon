@@ -15,5 +15,5 @@ java -jar websitemon.jar -cmdAdd https://soumasoft.com;https://google.com;http:/
 ````
 - let websitemon check website states
 ````
-java -jar websitemon.jar -cmdCheck all (info: '-cmdCheck all' is optional, because this is the default command)
+java -jar websitemon.jar -cmdCheck all   (note: '-cmdCheck all' is optional, because this is the default command)
 ````
