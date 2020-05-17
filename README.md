@@ -24,7 +24,7 @@ If the setting 'settMailReceiver' is filled with an email address, websitemon wi
 
 - Update the settings "settMailReceiver" and all SMTP-Settings with following command:
 ````bash
-java -jar websitemon.jar -settPersist
+java -jar websitemon.jar -cmdSettPersist
   -settMailReceiver your.email@server.com
   -settSmtpHost smtp.yourmailserver.com
   -settSmtpSender sender@yourmailserver.com
