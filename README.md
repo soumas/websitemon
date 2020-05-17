@@ -6,15 +6,15 @@ I have implemented the tool for my own use and would like to share it here - may
 - Download latest version from https://soumasoft.com/websitemon/ and unzip websitemon.jar to a directory of your choice
 - Open the command line interface of your system and navigate to the directory where websitemon.jar is placed
 - prepare websitemon (init database) with the following command:
-```
+```bash
 java -jar websitemon.jar -cmdInstall
 ```
 - add the website(s) you want to monitor:
-````
+````bash
 java -jar websitemon.jar -cmdAdd https://soumasoft.com;https://google.com;http://your-website.com
 ````
 - let websitemon check website states
-````
+````bash
 java -jar websitemon.jar -cmdCheck all
-// note: '-cmdCheck all' is optional, because this is the default command
+# note: '-cmdCheck all' is optional, because this is the default command
 ````
