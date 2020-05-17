@@ -43,3 +43,6 @@ The main functions of websitemon have already been described. For information ab
 ````bash
 java -jar websitemon.jar -cmdHelp
 ````
+
+## donation
+websitemon is absolutely free. Nevertheless, I would appreciate a donation if you use and like the tool :)
