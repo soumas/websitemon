@@ -22,7 +22,7 @@ java -jar websitemon.jar -cmdCheck all
 ## notification
 If the setting 'settMailReceiver' is filled with an email address, websitemon will send a notification to this address whenever the HTTP response code is different than 200. Corresponding SMTP settings are of course also necessary to be able to send emails.
 
-- Update the settings "settMailReceiver" and all SMTP-Settings with following command:
+- Update the settings "settMailReceiver" and all SMTP-Settings with following command (replace example parameters and newlines before you copy the command into your CLI):
 ````bash
 java -jar websitemon.jar -cmdSettPersist
   -settMailReceiver your.email@server.com
