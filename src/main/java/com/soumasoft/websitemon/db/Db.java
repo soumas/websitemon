@@ -13,6 +13,7 @@ public class Db {
 		public static final String TABLENAME = "websites";
 		public static final String COL_ID = "id";
 		public static final String COL_URL = "url";
+		public static final String COL_EXPECTED_RETURNCODE = "expected_returncode";
 	}
 	
 	public static class SETTINGS {

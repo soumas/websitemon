@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.soumasoft</groupId>
 	<artifactId>websitemon</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>websitemon</name>
 	<packaging>jar</packaging>
 
@@ -177,6 +177,7 @@
 		  <artifactId>maven-model</artifactId>
 		  <version>3.3.9</version>
 		</dependency>
+		
 	</dependencies>
 
 </project>

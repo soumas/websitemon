@@ -32,6 +32,11 @@ public class CmdAdd implements CommandHandler {
 			try {
 				// prepare url
 				url = url.trim();
+				int expectedCode = 200;
+				if(url.contains(",")) {
+					expectedCode = Integer.parseInt(url.substring(url.lastIndexOf(",")+1));
+					url = url.substring(0, url.lastIndexOf(","));
+				}
 
 				// validate url
 				new URL(url).toURI();
@@ -42,8 +47,8 @@ public class CmdAdd implements CommandHandler {
 						logger.info(String.format("already listed: %s", url));
 						return;
 					} else {
-						new Website().set(Db.WEBSITES.COL_URL, url).saveIt();
-						logger.info(String.format("added: %s", url));
+						new Website().set(Db.WEBSITES.COL_URL, url).set(Db.WEBSITES.COL_EXPECTED_RETURNCODE, expectedCode).saveIt();
+						logger.info(String.format("added %s, excepcted returncode %d", url, expectedCode));
 					}
 				}
 			} catch (Exception e) {

@@ -51,7 +51,7 @@ public class CmdCheck implements CommandHandler {
 				return;
 			}
 			
-			wLst.forEach(w -> {
+			for(Website w : wLst) {
 				String url = w.getString(Db.WEBSITES.COL_URL);
 				logger.info(String.format("checking '%s'... ", url));
 				HttpURLConnection connection = null;
@@ -59,11 +59,14 @@ public class CmdCheck implements CommandHandler {
 					URL u = new URL(url);
 					connection = (HttpURLConnection) u.openConnection();
 					connection.setRequestMethod("HEAD");
+					
+					
+					int expectedCode = w.getInteger(Db.WEBSITES.COL_EXPECTED_RETURNCODE);
 					int code = connection.getResponseCode();
-					if(code != 200) {
-						throw new RuntimeException(String.format("responsecode was %d", code));
+					if(code != expectedCode) {
+						throw new RuntimeException(String.format("expected: %d, actual: %d", expectedCode, code));
 					}
-					logger.info("ok (responsecode 200)");
+					logger.info(String.format("ok (responsecode %d)", code));
 				} catch (Exception e) {
 					logger.error("failed", e);
 					
@@ -74,7 +77,7 @@ public class CmdCheck implements CommandHandler {
 						connection.disconnect();
 					}
 				}
-			});
+			}
 		}
 	}
 
