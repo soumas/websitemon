@@ -93,7 +93,7 @@ public class CmdCheck implements CommandHandler {
 		if(notifReceiver != null) {
 			logger.info(String.format("sending notification to '%s'... ", notifReceiver));
 			String subject = "CHECK FAILED FOR " + url;
-			String msg = String.format("websitemon (instance: '%s') check failed for url %s\r\nMessage: %s", cfg.getSettingValue(SettingDefinition.DESCRIPTION), url, e.getStackTrace());
+			String msg = String.format("websitemon (instance: '%s') check failed for url %s\r\nMessage: %s", cfg.getSettingValue(SettingDefinition.DESCRIPTION), url, e.getMessage());
 			if(MailManager.sendMail(cfg, subject, msg)) {
 				logger.info("success");
 			} else {
