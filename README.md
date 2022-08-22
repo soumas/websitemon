@@ -1,5 +1,5 @@
 # websitemon
-websitemon is a simple java CLI tool which checks whether the call to one or more URLs is answered with the HTTP code 200 (OK). It also offers the option of notifying an email address if any check fails.
+websitemon is a simple java CLI tool which checks whether the call to one or more URLs is answered with the expected HTTP code (defaults to 200). It also offers the option of notifying an email address if any check fails.
 I have implemented the tool for my own use and would like to share it here - maybe it will also be helpful for someone else.
 
 ## basic usage
@@ -20,7 +20,7 @@ java -jar websitemon.jar -cmdCheck all
 ````
 
 ## notification
-If the setting 'settMailReceiver' is filled with an email address, websitemon will send a notification to this address whenever the HTTP response code is different than 200. Corresponding SMTP settings are of course also necessary to be able to send emails.
+If the setting 'settMailReceiver' is filled with an email address, websitemon will send a notification to this address whenever the HTTP response code is different than the expected one. Corresponding SMTP settings are of course also necessary to be able to send emails.
 
 - Update the settings "settMailReceiver" and all SMTP-Settings with following command (replace example parameters and newlines before you copy the command into your CLI):
 ````bash
